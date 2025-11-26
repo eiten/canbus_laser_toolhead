@@ -1,6 +1,6 @@
 # 🔥 Laser CANbus Toolhead PCB
 
-*🇬🇧 English version: [README.md](README.md)*
+> 🌍 **Sprachen:** [English](README.md) | [Deutsch](README.de.md)
 
 Ein kompaktes, robustes Toolhead-Board für Klipper-basierte Lasergravierer und -schneider (CoreXY). Dieses Board integriert Stromversorgung, Lasertreiber-Logik, CAN-Bus Kommunikation und Input Shaping (ICM-20602) auf kleinstem Raum.
 
@@ -241,3 +241,24 @@ cycle_time: 1.0
 - [CAN-Bus Setup Guide](https://www.klipper3d.org/CANBUS.html)
 - [Input Shaping](https://www.klipper3d.org/Resonance_Compensation.html)
 - [Katapult Firmware Flasher](https://github.com/Arksine/katapult)
+
+## Lizenz
+
+Dieses Projekt steht unter der **Creative Commons Namensnennung-Nicht kommerziell-Share Alike 4.0 International Lizenz** (CC BY-NC-SA 4.0).
+
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de)
+
+Dies bedeutet, Sie dürfen:
+- **Teilen** — das Material in jedwedem Format oder Medium vervielfältigen und weiterverbreiten
+- **Bearbeiten** — das Material remixen, verändern und darauf aufbauen
+
+Unter folgenden Bedingungen:
+- **Namensnennung** — Sie müssen angemessene Urheber- und Rechteangaben machen, einen Link zur Lizenz beifügen und angeben, ob Änderungen vorgenommen wurden
+- **Nicht kommerziell** — Sie dürfen das Material nicht für kommerzielle Zwecke nutzen
+- **Weitergabe unter gleichen Bedingungen** — Wenn Sie das Material remixen, verändern oder anderweitig direkt darauf aufbauen, dürfen Sie Ihre Beiträge nur unter derselben Lizenz wie das Original verbreiten
+
+Den vollständigen Lizenztext finden Sie unter: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de
+
+---
+
+> **Hinweis:** Dies ist die Originaldokumentation in deutscher Sprache. Eine englische Übersetzung finden Sie in [README.md](README.md).
