@@ -1,8 +1,51 @@
 # 🔥 Laser CANbus Toolhead PCB
 
-A compact, robust toolhead board for Klipper-based laser engravers and cutters (CoreXY). This board integrates power supply, laser driver logic, CAN-Bus communication, and input shaping (ADXL345) in the smallest possible space.
+*🇩🇪 Deutsche Version: [README.de.md](README.de.md)*
+
+A compact, robust toolhead board for Klipper-based laser engravers and cutters (CoreXY). This board integrates power supply, laser driver logic, CAN-Bus communication, and input shaping (ICM-20602) in the smallest possible space.
 
 ![Laser CANbus Toolhead PCB](img/Laser%20CANbus%20Toolhead.png)
+
+## 📚 Contents
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [🔥 Laser CANbus Toolhead PCB](#-laser-canbus-toolhead-pcb)
+  - [📚 Contents](#-contents)
+  - [✨ Features](#-features)
+    - [🧠 Microcontroller](#-microcontroller)
+    - [🔗 CAN-Bus Communication](#-can-bus-communication)
+    - [📊 Input Shaping](#-input-shaping)
+    - [⚡ Laser Power Control](#-laser-power-control)
+    - [🎛️ Laser Signal Control](#️-laser-signal-control)
+    - [🔌 Power Supply](#-power-supply)
+    - [🚨 Diagnostics & Monitoring](#-diagnostics--monitoring)
+  - [📋 Klipper Configuration](#-klipper-configuration)
+    - [Basic MCU Setup](#basic-mcu-setup)
+    - [Input Shaping (ICM-20602)](#input-shaping-icm-20602)
+    - [Laser Control](#laser-control)
+  - [🔌 Pinout & Connector Assignment](#-pinout--connector-assignment)
+    - [J101 - Power & CAN Input (Micro-Fit 3.0, 2x2, THT)](#j101---power--can-input-micro-fit-30-2x2-tht)
+    - [J102 - Laser Output (Micro-Fit 3.0, 1x3, THT)](#j102---laser-output-micro-fit-30-1x3-tht)
+    - [Debug/Programming Header (Back Side)](#debugprogramming-header-back-side)
+  - [🔧 Installation & Setup](#-installation--setup)
+    - [1. CAN-Bus Configuration](#1-can-bus-configuration)
+    - [2. Firmware Flash](#2-firmware-flash)
+    - [3. Find UUID](#3-find-uuid)
+  - [⚠️ Safety Notes](#️-safety-notes)
+  - [🛠️ BOM (Bill of Materials) - Highlights](#️-bom-bill-of-materials---highlights)
+  - [🛠️ Technical Specifications](#️-technical-specifications)
+  - [📝 Changelog](#-changelog)
+    - [Rev. 1](#rev-1)
+    - [Rev. 0 (Initial Release)](#rev-0-initial-release)
+  - [📚 Additional Resources](#-additional-resources)
+
+<!-- /code_chunk_output -->
+
+
 
 ## ✨ Features
 
@@ -17,13 +60,16 @@ A compact, robust toolhead board for Klipper-based laser engravers and cutters (
 - **Slope Control:** Switchable for EMI optimization
 
 ### 📊 Input Shaping
-- **Sensor:** On-board ADXL345 accelerometer (SPI)
+- **Sensor:** On-board ICM-20602 accelerometer/gyroscope (SPI)
 - **Purpose:** Klipper resonance measurement for perfect print quality
+- **Advantage:** Better availability and modern sensor technology
 
 ### ⚡ Laser Power Control
-- **Circuit:** 24V / 4A High-Side Switch (AO4407A P-MOSFET)
+- **Circuit:** 24V / 6A High-Side Switch (CJAC70P06 P-MOSFET, 60V rated)
+- **Peak Current:** 8A capability
 - **Soft-Start:** Limits inrush current (Rise-time ~1.2ms)
 - **Safety:** Hardware pull-down prevents unwanted activation
+- **Limitation:** Max 6A limited by Micro Fit 3.0 connector with 0.75mm² wire
 
 ### 🎛️ Laser Signal Control
 - **PWM:** 5V Level-shifted via 74AHCT1G125 buffer
@@ -51,15 +97,15 @@ sensor_type: temperature_mcu
 sensor_mcu: toolhead
 ```
 
-### Input Shaping (ADXL345)
+### Input Shaping (ICM-20602)
 ```ini
-[adxl345]
+[mpu9250]
 cs_pin: toolhead:PA4
 spi_bus: spi1
-axes_map: x,y,z
+#axes_map: x,y,z  # Configure according to your printer orientation
 
 [resonance_tester]
-accel_chip: adxl345
+accel_chip: mpu9250
 probe_points:
     150, 150, 20  # Adjust to your bed size
 ```
@@ -88,7 +134,7 @@ cycle_time: 1.0
 
 ## 🔌 Pinout & Connector Assignment
 
-### J101 - Power & CAN Input (Micro-Fit 3.0, 2x2)
+### J101 - Power & CAN Input (Micro-Fit 3.0, 2x2, THT)
 | Pin | Signal | Description |
 |-----|---------|-------------|
 | 1 | **+24V** | Main power input (High Current) |
@@ -96,7 +142,7 @@ cycle_time: 1.0
 | 3 | **CAN_H** | CAN-Bus High Signal |
 | 4 | **CAN_L** | CAN-Bus Low Signal |
 
-### J102 - Laser Output (Micro-Fit 3.0, 1x3)
+### J102 - Laser Output (Micro-Fit 3.0, 1x3, THT)
 | Pin | Signal | Description |
 |-----|---------|-------------|
 | 1 | **GND** | Laser Ground |
@@ -140,16 +186,17 @@ cycle_time: 1.0
 
 ## 🛠️ BOM (Bill of Materials) - Highlights
 
-| Component | Value/Type | Function | Package |
-|-----------|------------|----------|---------|
-| **U101** | STM32F072CBU6 | Main Microcontroller | UFQFPN-48 |
-| **U102** | MP2459GJ-Z | Buck Converter 24V→5V | TSOT-23-8 |
-| **U105** | SN65HVD230DR | CAN-Bus Transceiver | SOIC-8 |
-| **U106** | ADXL343/ADXL345 | 3-Axis Accelerometer | LGA-14 |
-| **Q101** | AO4407A | P-MOSFET (Laser Switch) | SOIC-8 |
-| **D101** | SMF24A | TVS Diode (Overvoltage Protection) | DO-214AC |
-| **F101** | 1812L025 | PTC Fuse 250mA | 1812 |
-| **Y101** | 12MHz | Crystal for CAN Stability | HC-49/S |
+| Component | Value/Type | Function | Package | Order Code |
+|-----------|------------|----------|---------|------------|
+| **U101** | STM32F072CBU6 | Main Microcontroller | UFQFPN-48 | STM32F072CBU6 |
+| **U102** | MP2459GJ-Z | Buck Converter 24V→5V | TSOT-23-8 | MP2459GJ-Z |
+| **U105** | SN65HVD230DR | CAN-Bus Transceiver | SOIC-8 | SN65HVD230DR |
+| **U106** | ICM-20602 | 6-Axis IMU (Accelerometer/Gyroscope) | LGA-16 | ICM-20602 |
+| **Q101** | CJAC70P06 | P-MOSFET (Laser Switch, 60V) | SOIC-8 | CJAC70P06 |
+| **D101** | SMF24A | TVS Diode (Overvoltage Protection) | DO-214AC | SMF24A |
+| **F101** | 1812L025 | PTC Fuse 250mA | 1812 | 1812L025 |
+| **Y101** | 12MHz | Crystal for CAN Stability | HC-49/S | 12MHz Crystal |
+| **J101/J102** | Micro-Fit 3.0 | THT Connectors | THT | Micro-Fit 3.0 THT |
 
 ## 🛠️ Technical Specifications
 
@@ -163,13 +210,28 @@ cycle_time: 1.0
 | **Operating Temperature** | -10 to +70 | °C |
 | **Dimensions** | TBD | mm |
 
+## 📝 Changelog
+
+### Rev. 1
+- **Transistor Upgrade:** Replaced MOSFET with CJAC70P06 (60V voltage rating)
+- **Sensor Upgrade:** Changed from ADXL345 to ICM-20602 (better availability, modern 6-axis IMU)
+- **Connector Change:** Micro Fit 3.0 connectors changed from SMD to THT mounting
+- **Silkscreen Enhancement:** Added connector pin assignments to silkscreen for easier assembly
+- **Layout Improvements:** Cleaned up component placement and optimized routing
+- **Documentation:** Updated overview image to reflect current design
+- **BOM Update:** Added component order numbers and updated production data
+- **Production Files:** Updated assembly and production files with current components
+
+### Rev. 0 (Initial Release)
+- Initial PCB design with STM32F072CBU6 microcontroller
+- CAN-Bus communication with SN65HVD230 transceiver
+- 24V/4A laser power control with AO4407A MOSFET
+- ADXL345 accelerometer for input shaping
+- MP2459 buck converter for power supply
+
 ## 📚 Additional Resources
 
 - [Klipper Documentation](https://www.klipper3d.org/Config_Reference.html)
 - [CAN-Bus Setup Guide](https://www.klipper3d.org/CANBUS.html)
 - [Input Shaping](https://www.klipper3d.org/Resonance_Compensation.html)
 - [Katapult Firmware Flasher](https://github.com/Arksine/katapult)
-
----
-
-*🇩🇪 Deutsche Version: [Readme.de.md](Readme.de.md)*
