@@ -3633,23 +3633,27 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mechanical:MountingHole"
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 1.016)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
 			(property "Reference" "H"
-				(at 0 5.08 0)
+				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "MountingHole"
-				(at 0 3.175 0)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -3674,7 +3678,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Mounting Hole without connection"
+			(property "Description" "Mounting Hole with connection"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3692,7 +3696,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "MountingHole*"
+			(property "ki_fp_filters" "MountingHole*Pad*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3701,9 +3705,9 @@
 					(hide yes)
 				)
 			)
-			(symbol "MountingHole_0_1"
+			(symbol "MountingHole_Pad_0_1"
 				(circle
-					(center 0 0)
+					(center 0 1.27)
 					(radius 1.27)
 					(stroke
 						(width 1.27)
@@ -3711,6 +3715,26 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -5900,6 +5924,12 @@
 		(uuid "4d06bc5c-4fac-4d61-a461-04ce381a3315")
 	)
 	(junction
+		(at 76.2 279.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "510456ac-dfe8-4b03-8cb7-8d8cceee0bad")
+	)
+	(junction
 		(at 72.39 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6176,6 +6206,12 @@
 		(uuid "ca8c538c-e9da-4ea2-84d1-62b6f9b005d4")
 	)
 	(junction
+		(at 38.1 279.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cff4a0f5-3288-498b-ac2c-cd8cc99cc0ce")
+	)
+	(junction
 		(at 228.6 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6246,6 +6282,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e80bab69-578b-4d15-9aff-be85c3e5080c")
+	)
+	(junction
+		(at 57.15 279.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e8974b53-79bc-4b17-88b3-b1d983707f38")
 	)
 	(junction
 		(at 129.54 138.43)
@@ -6400,6 +6442,16 @@
 			(type default)
 		)
 		(uuid "0075bb10-5ea9-4e43-8d1c-767a88d80dd9")
+	)
+	(wire
+		(pts
+			(xy 57.15 279.4) (xy 38.1 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "017a19f7-3bc5-4259-a102-b89265e020ee")
 	)
 	(wire
 		(pts
@@ -8413,6 +8465,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 279.4) (xy 76.2 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "980be694-453b-4ef4-bc9d-a9deed6ce253")
+	)
+	(wire
+		(pts
 			(xy 168.91 101.6) (xy 181.61 101.6)
 		)
 		(stroke
@@ -8613,6 +8675,16 @@
 	)
 	(wire
 		(pts
+			(xy 19.05 279.4) (xy 19.05 276.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6bfc783-323f-4099-81bb-f07aa7038024")
+	)
+	(wire
+		(pts
 			(xy 76.2 205.74) (xy 86.36 205.74)
 		)
 		(stroke
@@ -8643,6 +8715,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 276.86) (xy 57.15 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8a982af-5724-4819-892c-34d70559fb0f")
+	)
+	(wire
+		(pts
 			(xy 132.08 111.76) (xy 132.08 114.3)
 		)
 		(stroke
@@ -8650,6 +8732,16 @@
 			(type default)
 		)
 		(uuid "a8fd3707-e5c1-4d10-acb0-83aa2ca0a265")
+	)
+	(wire
+		(pts
+			(xy 38.1 279.4) (xy 19.05 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a91d0205-cd72-4022-bf00-2bb142771d5d")
 	)
 	(wire
 		(pts
@@ -8863,6 +8955,26 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 279.4) (xy 57.15 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc624e07-78cb-4153-ad32-fad5cea1c40f")
+	)
+	(wire
+		(pts
+			(xy 38.1 276.86) (xy 38.1 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcf25a38-2754-45cb-9bcf-acc0579b245c")
+	)
+	(wire
+		(pts
 			(xy 58.42 78.74) (xy 72.39 78.74)
 		)
 		(stroke
@@ -8880,6 +8992,16 @@
 			(type default)
 		)
 		(uuid "c2474ea0-cc4c-486c-a6a1-257ef2ffc37d")
+	)
+	(wire
+		(pts
+			(xy 76.2 276.86) (xy 76.2 279.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c33521ec-e448-4b7c-ba83-ef32284b6c1b")
 	)
 	(wire
 		(pts
@@ -10644,6 +10766,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 78.74 279.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0fb9251a-0901-4f81-904b-37e6b671066b")
+		(property "Reference" "#PWR0123"
+			(at 85.09 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 82.55 279.3999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 78.74 279.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1abfac84-6418-4b4f-9fc5-d5949e580029")
+		)
+		(instances
+			(project "Laser CANbus Toolhead"
+				(path "/ce7005b1-0d93-427d-a521-eed016fd602d"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 149.86 62.23 0)
 		(mirror y)
@@ -11540,8 +11729,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 16.51 280.67 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 76.2 274.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -11550,7 +11739,7 @@
 		(fields_autoplaced yes)
 		(uuid "2ab08484-e9c7-4db5-b0d6-64411fb294d4")
 		(property "Reference" "H104"
-			(at 19.05 279.3999 0)
+			(at 78.74 271.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11559,7 +11748,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 19.05 281.9399 0)
+			(at 78.74 274.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11567,8 +11756,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 16.51 280.67 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_Pad_Via"
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11577,7 +11766,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 16.51 280.67 0)
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11585,8 +11774,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 16.51 280.67 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11595,7 +11784,7 @@
 			)
 		)
 		(property "Manufacturer Part #" ""
-			(at 16.51 280.67 0)
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11604,7 +11793,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 16.51 280.67 0)
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11613,13 +11802,16 @@
 			)
 		)
 		(property "FT Rotation Offset" ""
-			(at 16.51 280.67 0)
+			(at 76.2 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "0e4f1cf3-dcc1-43bf-8661-0b0750ae47d4")
 		)
 		(instances
 			(project "Laser CANbus Toolhead"
@@ -14475,8 +14667,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 16.51 270.51 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 38.1 274.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -14485,7 +14677,7 @@
 		(fields_autoplaced yes)
 		(uuid "774b099d-3580-496f-9eae-638339b70284")
 		(property "Reference" "H102"
-			(at 19.05 269.2399 0)
+			(at 40.64 271.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14494,7 +14686,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 19.05 271.7799 0)
+			(at 40.64 274.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14502,8 +14694,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 16.51 270.51 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_Pad_Via"
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14512,7 +14704,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 16.51 270.51 0)
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14520,8 +14712,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 16.51 270.51 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14530,7 +14722,7 @@
 			)
 		)
 		(property "Manufacturer Part #" ""
-			(at 16.51 270.51 0)
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14539,7 +14731,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 16.51 270.51 0)
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14548,13 +14740,16 @@
 			)
 		)
 		(property "FT Rotation Offset" ""
-			(at 16.51 270.51 0)
+			(at 38.1 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "7602400c-cb5e-4f1f-ac1d-e91ff6950fd6")
 		)
 		(instances
 			(project "Laser CANbus Toolhead"
@@ -15991,8 +16186,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 16.51 275.59 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 57.15 274.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -16001,7 +16196,7 @@
 		(fields_autoplaced yes)
 		(uuid "9e9c1501-e66f-475b-ad03-12a0daf42c92")
 		(property "Reference" "H103"
-			(at 19.05 274.3199 0)
+			(at 59.69 271.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16010,7 +16205,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 19.05 276.8599 0)
+			(at 59.69 274.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16018,8 +16213,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 16.51 275.59 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_Pad_Via"
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16028,7 +16223,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 16.51 275.59 0)
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16036,8 +16231,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 16.51 275.59 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16046,7 +16241,7 @@
 			)
 		)
 		(property "Manufacturer Part #" ""
-			(at 16.51 275.59 0)
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16055,7 +16250,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 16.51 275.59 0)
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16064,13 +16259,16 @@
 			)
 		)
 		(property "FT Rotation Offset" ""
-			(at 16.51 275.59 0)
+			(at 57.15 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "4b2f8cf9-1d48-478b-a79c-33da43eeaf42")
 		)
 		(instances
 			(project "Laser CANbus Toolhead"
@@ -18767,8 +18965,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 16.51 265.43 0)
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 19.05 274.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -18777,7 +18975,7 @@
 		(fields_autoplaced yes)
 		(uuid "fafbe705-2d08-488e-acdb-092ee647a274")
 		(property "Reference" "H101"
-			(at 19.05 264.1599 0)
+			(at 21.59 271.7799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18786,7 +18984,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 19.05 266.6999 0)
+			(at 21.59 274.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18794,8 +18992,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5"
-			(at 16.51 265.43 0)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_Pad_Via"
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18804,7 +19002,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 16.51 265.43 0)
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18812,8 +19010,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 16.51 265.43 0)
+		(property "Description" "Mounting Hole with connection"
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18822,7 +19020,7 @@
 			)
 		)
 		(property "Manufacturer Part #" ""
-			(at 16.51 265.43 0)
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18831,7 +19029,7 @@
 			)
 		)
 		(property "LCSC Part #" ""
-			(at 16.51 265.43 0)
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18840,13 +19038,16 @@
 			)
 		)
 		(property "FT Rotation Offset" ""
-			(at 16.51 265.43 0)
+			(at 19.05 274.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "1b9d1ffa-4342-44f5-b944-a71e3f89068e")
 		)
 		(instances
 			(project ""

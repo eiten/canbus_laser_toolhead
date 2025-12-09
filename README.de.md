@@ -42,6 +42,7 @@ Ein kompaktes, robustes Toolhead-Board für Klipper-basierte Lasergravierer und 
     - [Rev. 1](#rev-1)
     - [Rev. 0 (Erste Veröffentlichung)](#rev-0-erste-veröffentlichung)
   - [📚 Weitere Ressourcen](#-weitere-ressourcen)
+  - [Lizenz](#lizenz)
 
 <!-- /code_chunk_output -->
 
@@ -218,7 +219,7 @@ cycle_time: 1.0
 
 ## 📝 Changelog
 
-### Rev. 1
+### Rev. 0.1
 - **Transistor Upgrade:** MOSFET durch CJAC70P06 ersetzt (60V Spannungsfestigkeit)
 - **Sensor Upgrade:** Wechsel von ADXL345 zu ICM-20602 (bessere Verfügbarkeit, moderner 6-Achsen IMU)
 - **Steckverbinder Änderung:** Micro Fit 3.0 Steckverbinder von SMD zu THT geändert
@@ -228,7 +229,7 @@ cycle_time: 1.0
 - **BOM Update:** Bauteil-Bestellnummern hinzugefügt und Produktionsdaten aktualisiert
 - **Produktionsdateien:** Montage- und Produktionsdateien mit aktuellen Bauteilen aktualisiert
 
-### Rev. 0 (Erste Veröffentlichung)
+### Rev. 0.0 (Erste Veröffentlichung)
 - Erstes PCB-Design mit STM32F072CBU6 Mikrocontroller
 - CAN-Bus Kommunikation mit SN65HVD230 Transceiver
 - 24V/4A Laser-Leistungssteuerung mit AO4407A MOSFET

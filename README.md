@@ -42,6 +42,7 @@ A compact, robust toolhead board for Klipper-based laser engravers and cutters (
     - [Rev. 1](#rev-1)
     - [Rev. 0 (Initial Release)](#rev-0-initial-release)
   - [📚 Additional Resources](#-additional-resources)
+  - [License](#license)
 
 <!-- /code_chunk_output -->
 
@@ -212,7 +213,7 @@ cycle_time: 1.0
 
 ## 📝 Changelog
 
-### Rev. 1
+### Rev. 0.1
 - **Transistor Upgrade:** Replaced MOSFET with CJAC70P06 (60V voltage rating)
 - **Sensor Upgrade:** Changed from ADXL345 to ICM-20602 (better availability, modern 6-axis IMU)
 - **Connector Change:** Micro Fit 3.0 connectors changed from SMD to THT mounting
@@ -222,7 +223,7 @@ cycle_time: 1.0
 - **BOM Update:** Added component order numbers and updated production data
 - **Production Files:** Updated assembly and production files with current components
 
-### Rev. 0 (Initial Release)
+### Rev. 0.0 (Initial Release)
 - Initial PCB design with STM32F072CBU6 microcontroller
 - CAN-Bus communication with SN65HVD230 transceiver
 - 24V/4A laser power control with AO4407A MOSFET
